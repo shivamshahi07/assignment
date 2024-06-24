@@ -231,7 +231,7 @@ export default function Home() {
           </div>
         </div>
         <div className="rounded-2xl shadow-2xl p-3 m-10 ">
-          "A quote from Atlassian"
+        &quot;A quote from Atlassian".&quot;
           <div className="flex items-center space-x-5 justify-start">
             <Image
               src="/quote.png"
