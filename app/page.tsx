@@ -1,112 +1,250 @@
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  Database,
+  Dot,
+  Edit2Icon,
+  EyeIcon,
+  MapPin,
+  MessageSquare,
+  Trash2Icon,
+  UserCheck2Icon,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="flex ">
+      <div className="mt-24 w-2/3 ">
+        <ul className="flex  justify-start gap-8 ml-20  ">
+          <li className="text-orange-500 ">
+            Job preview <Separator className=" h-0.5 w-0.4 bg-orange-500" />
+          </li>
+          <li>Applicants </li>
+          <li>Match</li>
+          <li>Messages</li>
+        </ul>
+        <Separator />
+        <div className="flex items-center justify-start ml-20 mt-10 ">
+          <h1 className="text-3xl font-bold ">Senior Product Designer</h1>
+          <span className="text-slate-700 text-sm flex items-center justify-center gap-4 ">
+            <span className="flex items-center justify-center text-sm ">
+              <Dot className="ml-1" />
+              posted 2 days ago{" "}
+            </span>
+
+            <div className="bg-green-200 border border-green-500 rounded-full flex items-center justify-center px-2 text-md ">
+              {" "}
+              <Dot className="-ml-1 text-green-500 w-full  " />
+              Open
+            </div>
+          </span>
+        </div>
+        <div>
+          <ul className="flex justify-start ml-20 mt-5  ">
+            <li className="flex justify-center ">
+              <MapPin />
+              Delaware,USA
+            </li>
+            <li>
+              <Dot className="text-slate-500" />
+            </li>
+            <li className="flex justify-center ">
+              <Database />
+              300k-400k
+            </li>
+          </ul>
+        </div>
+        <Separator className="mt-3 " />
+
+        <div className="flex items-center justify-start gap-8 ml-20 mt-4 ">
+          <div className="w-1/4">
+            skills Required
+            <ul className="flex-col flex-col-1 justify-start space-y-2">
+              <li className="flex items-center justify-start">
+                <Image src="/figma.png" width={20} height={20} alt="" />
+                Figma
+              </li>
+              <li className="flex items-center justify-start">
+                <Image src="/illus.png" width={20} height={20} alt="" />
+                Adobe Illustrator
+              </li>
+              <li className="flex items-center justify-start">
+                <Image src="/xd.png" width={20} height={20} alt="" />
+                Adobe Xd
+              </li>
+            </ul>
+          </div>
+          <div className="w-1/4 mb-12">
+            preferred language
+            <ul className="flex-col flex-col-1 ">
+              <li>English</li>
+            </ul>{" "}
+          </div>
+          <div className="w-1/4 mb-12">
+            type{" "}
+            <ul className="flex-col flex-col-1 ">
+              <li>Full time</li>
+            </ul>
+          </div>
+          <div className="w-1/4 mb-12">
+            Years of Experience
+            <ul className="flex-col flex-col-1 ">
+              <li>3+ years of experience </li>
+            </ul>{" "}
+          </div>
+        </div>
+        <Separator />
+        <div className="ml-20 font-light mt-5">
+          <div className="text-md font-light ">About the job </div>
+          <div>
+            <ol type="1" className="">
+              <li className="mt-1 ">Handle the UI/UX research design</li>
+              <li>
+                Work on researching on latest web applications designs & trends
+              </li>
+              <li>Work on conceptualizing and visualizing</li>
+              <li>
+                Work on creating graphics content and other graphic related
+                works
+              </li>
+            </ol>
+            Benefits:
+            <ul id="hehe">
+              <li>Health Insurance</li>
+              <li>Provident Fund</li>
+            </ul>
+            Schedule:
+            <ul id="hehe">
+              <li>Day Shift</li>
+            </ul>
+            Supplemental pay types::
+            <ul id="hehe">
+              <li>Performance bonus</li>
+            </ul>
+          </div>
+        </div>
+        <Separator />
+        <div className="flex items-center justify-start ml-20 gap-5 mt-5  ">
+          <Image
+            src="/atlassian-logo.png"
+            width={50}
+            height={50}
+            alt=""
+            className=" rounded-md  "
+          />
+          Atlassian{" "}
+          <Button className="text-blue-800 rounded-xl  shadow-lg   bg-blue-300   ">
+            follow
+          </Button>
+        </div>
+        <div className="ml-20 flex items-center justify-start mt-5 ">
+          <div className="w-1/2 ">
+            <span className="font-extralight">Company size</span>
+            <ul>
+              <li className="font-medium ">1k-2k Employees</li>
+            </ul>
+            <span className="font-extralight">Sector</span>
+            <ul>
+              <li className="font-medium ">
+                Information Technology, Infrastructure
+              </li>
+            </ul>
+            <span className="font-extralight">Founded in</span>
+            <ul>
+              <li className="font-medium ">2019</li>
+            </ul>
+          </div>
+          <div className="w-1/2">
+            <span className="font-extralight">Type</span>
+            <ul>
+              <li className="font-medium ">Private</li>
+            </ul>
+            <span className="font-extralight">Funding</span>
+            <ul>
+              <li className="font-medium ">Bootstraped</li>
+            </ul>
+            <span className="font-extralight">Founded by</span>
+            <ul>
+              <li className="font-medium ">
+                Scott Farquahar, Mike Cannon-Brookes
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <Link
+            href="www.google.com"
+            className="hover:text-blue-500 underline ml-20 font-light mt-2 "
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            Report this listing
+          </Link>
         </div>
       </div>
+      <div className="w-0.5 bg-gray-300"></div> {/* Vertical rule */}
+      <div className="w-1/3 mt-24 ">
+        <div className="flex items-center justify-center  space-x-6 ">
+          <Button className="bg-red-300  text-red-500 ">
+            <Trash2Icon />
+            Delete this Job
+          </Button>
+          <Button className="bg-red-500  text-white ">
+            <Edit2Icon />
+            Edit this Job
+          </Button>
+        </div>
+        <div className="mt-10 text-xl space-y-5  ">
+          <div className="flex items-center justify-around">
+            <div className="flex items-center justify-start">
+              <Users />
+              Applicants
+            </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+            <div>400</div>
+          </div>
+          <Separator />
+          <div className="flex items-center justify-around">
+            <div className="flex items-center justify-start">
+              <UserCheck2Icon />
+              Matches
+            </div>
+            <div>100</div>
+          </div>
+          <Separator />
+          <div className="flex items-center justify-around">
+            <div className="flex items-center justify-start">
+              <MessageSquare />
+              Messages
+            </div>
+            <div>147</div>
+          </div>
+          <Separator />
+          <div className="flex items-center justify-around">
+            <div className="flex items-center justify-start">
+              <EyeIcon />
+              Views
+            </div>
+            <div>800</div>
+          </div>
+        </div>
+        <div className="rounded-2xl shadow-2xl p-3 m-10 ">
+          "A quote from Atlassian"
+          <div className="flex items-center space-x-5 justify-start">
+            <Image
+              src="/quote.png"
+              width={40}
+              height={40}
+              alt="quote"
+              className="mt-10 rounded-full "
+            />
+            <div className="flex flex-col mt-8 ">
+              Name<span className="font-light ">description</span>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
